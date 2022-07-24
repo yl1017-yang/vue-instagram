@@ -4,19 +4,21 @@
       <li>Cancel</li>
     </ul>
     <ul class="header-button-right">
-      <li><button @click="step++">Next</button></li>
+      <li><button v-if="step == 1" @click="step++">Next</button></li>
+      <li><button v-if="step == 2" @click="publish">발행</button></li>
     </ul>
     <img src="./assets/logo.png" class="logo" />
   </div>
 
-  <!-- 탭 메뉴로도 사용할수 있고 라우터(뒤로가기 잘됨)로도 사용 가능 -->
+  <!-- 탭 메뉴로도 사용할수 있고 라우터(뒤로가기 잘됨)로도 사용 가능 
   <button @click="step = 0">리스트</button>
   <button @click="step = 1">필터</button>
-  <button @click="step = 2">글작성</button>
+  <button @click="step = 2">글작성</button>-->
 
 
-  <Container :이미지="이미지" :게시물="게시물" :step="step" />
+  <Container :이미지="이미지" :게시물="게시물" :step="step" @write="작성한글 = $event" />
   <!-- props 데이터 전송법 :게시물 데이터를 Container.vue 에 보내기 -->
+  <!-- contaner 에서 emit 해온거 @write="작성한글 = $event" -->
 
   <button @click="more">더보기</button>
 
@@ -58,9 +60,24 @@ export default {
       게시물 : postdata,
       더보기 : 0,
       이미지 : '',
+      작성한글 : '',
     }
   },
   methods : {
+    publish(){ // 글발행시
+      var 내게시물 = {
+        name: "Kim Hyun ---",
+        userImage: "https://placeimg.com/100/100/arch",
+        postImage: this.이미지,
+        likes: 36,
+        date: "May 15",
+        liked: false,
+        content: this.작성한글,  //textarea에 글쓴 내용 메인에 뜨기
+        filter: "perpetua",
+      };
+      this.게시물.unshift(내게시물);  //왼쪽의 array에 자료집어 넣어줌
+      this.step = 0; // 글쓴후(step) 메인으로 돌려보냄
+    },
     more(){
       // 내가 원하는 데이터 전송 / 전송 성공시 then / 전송 실패시 catch
       // axios.post('url', {name : 'kim'}).then().catch((err)=>{

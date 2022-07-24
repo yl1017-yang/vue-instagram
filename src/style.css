@@ -41,7 +41,6 @@ ul {
   width: 100%;
   position: sticky;
   bottom: 0;
-  padding-bottom: 10px;
   background-color: #eee;
 }
 .footer-button-plus {
@@ -61,7 +60,9 @@ ul {
   display: none;
 }
 .input-plus {
+  display:block;
   width: 100%;
+  height: 50px;
   cursor: pointer;
 }
 #app {
@@ -114,10 +115,11 @@ ul {
   }
   .write-box {
   border: none;
-  width: 90%;
-  height: 100px;
+  width: 85%;
+  height: 80px;
   padding: 15px;
-  margin: auto;
+  margin: 15px auto;
   display: block;
   outline: none;
+  background: #f4f4f4;
   }
