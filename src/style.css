@@ -21,6 +21,8 @@ ul {
   padding-bottom: 8px;
   position: sticky;
   top: 0;
+  border-bottom:1px solid #ddd;
+  z-index:50;
 }
 .header-button-left {
   color: skyblue;

@@ -10,32 +10,10 @@
     <img src="./assets/logo.png" class="logo" />
   </div>
 
-  <!-- 탭 메뉴로도 사용할수 있고 라우터(뒤로가기 잘됨)로도 사용 가능 
+    <!-- 탭 메뉴로도 사용할수 있고 라우터(뒤로가기 잘됨)로도 사용 가능 
   <button @click="step = 0">리스트</button>
   <button @click="step = 1">필터</button>
   <button @click="step = 2">글작성</button>-->
-  
-  <!-- commit : mutations 사용 함수 / dispatch : actions 사용 함수 -->
-
-  <!-- vuex 사용방법 : (vuex국룰) 컴포넌트 안에서 직접 수정하기 금지 -->
-  <!-- <h4>안녕 {{ $store.state.name }} / 나이 : {{ $store.state.age }}</h4>  
-  <button @click="$store.commit('이름변경')">수정버튼</button>
-  <button @click="$store.commit('나이증가', 10)">나이 10씩증가</button> -->
-  <h4>안녕 {{ $store.state.name }} / 나이 : {{ $store.state.age }}</h4>  
-  <button @click="나이증가(10)">나이 10씩증가</button>
-  <!-- <button @click=" $store.state.name = '박으로 수정'">수정버튼</button> 잘못된 예시 -->
-  <br><hr/>
-
-  <p>{{ $store.state.more }}</p>
-  <button @click="$store.dispatch('getData')">vuex 더보기 버튼</button>
-
-  <br><br><hr/>
-
-  <p>computed : {{now2}} <br> method : {{now()}} -- {{카운터}}</p>
-  <button @click="카운터++">computed / method 버튼 테스트</button>
-
-  <p>mapState : [{{name}}, {{내이름}}] {{age}} {{likes}}</p>
-  <br><br><hr/>
 
   <Container :이미지="이미지" :게시물="게시물" :step="step" @write="작성한글 = $event" />
   <!-- props 데이터 전송법 :게시물 데이터를 Container.vue 에 보내기 -->
@@ -58,6 +36,31 @@
   <button @click="step = 0">버튼0</button>
   <button @click="step = 1">버튼1</button>
   <button @click="step = 2">버튼2</button> -->
+
+
+
+  
+  <!-- commit : mutations 사용 함수 / dispatch : actions 사용 함수 -->
+
+  <!-- vuex 사용방법 : (vuex국룰) 컴포넌트 안에서 직접 수정하기 금지 -->
+  <!-- <h4>안녕 {{ $store.state.name }} / 나이 : {{ $store.state.age }}</h4>  
+  <button @click="$store.commit('이름변경')">수정버튼</button>
+  <button @click="$store.commit('나이증가', 10)">나이 10씩증가</button> -->
+  <h4>안녕 {{ $store.state.name }} / 나이 : {{ $store.state.age }}</h4>  
+  <button @click="나이증가(10)">나이 10씩증가</button>
+  <!-- <button @click=" $store.state.name = '박으로 수정'">수정버튼</button> 잘못된 예시 -->
+  <br><hr/>
+
+  <p>{{ $store.state.more }}</p>
+  <button @click="$store.dispatch('getData')">vuex 더보기 버튼</button>
+
+  <br><br><hr/>
+
+  <p>computed : {{now2}} <br> method : {{now()}} -- {{카운터}}</p>
+  <button @click="카운터++">computed / method 버튼 테스트</button>
+
+  <p>mapState : [{{name}}, {{내이름}}] {{age}} {{likes}}</p>
+  <br><br><hr/>
 
 </template>
 
