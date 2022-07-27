@@ -37,8 +37,6 @@
   <button @click="step = 1">버튼1</button>
   <button @click="step = 2">버튼2</button> -->
 
-
-
   
   <!-- commit : mutations 사용 함수 / dispatch : actions 사용 함수 -->
 
@@ -69,6 +67,7 @@ import Container from './components/Container';
 import postdata from './assets/post.js';
 import axios from 'axios';
 import {mapMutations, mapState} from 'vuex';
+
 //axios.get() 서버로 데이터 받기 - axios로 ajax 요청하는법
 //axios.post() 서버로 데이터 보내기
 

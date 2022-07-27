@@ -38,12 +38,17 @@
       </div>
     </div>
 
+    <div v-if="step == 3">
+      <MyPage :one="1"/>
+    </div>
+
   </div>
 </template>
 
 <script>
 import Post from './Post.vue';
 import FilterBox from './FilterBox';
+import MyPage from './MyPage';
 
 export default {
   name: "App",
@@ -60,7 +65,8 @@ export default {
   },
   components : {
     Post : Post,
-    FilterBox : FilterBox,
+    FilterBox,
+    MyPage,
   },
   props : {
     게시물 : Object,

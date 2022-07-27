@@ -8,7 +8,7 @@ const store = createStore({
       age : 20,
       likes : [0, 0, 0],
       좋아요눌렀니 : false,
-      more : {},      
+      more : {},
     }
   },
   mutations :{ //state 수정방법 정의하는 곳
