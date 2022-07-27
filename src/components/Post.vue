@@ -5,13 +5,15 @@
       <span class="profile-name">{{ 게시물.name }}</span>
     </div>
 
-    <div class="post-body" :style="{ backgroundImage : `url(${게시물.postImage})` }"></div>
+    <div @click="$store.commit('좋아요')" :class="게시물.filter" class="post-body" :style="{ backgroundImage : `url(${게시물.postImage})` }"></div>
     <!-- : 콜론을 사용하면 데이타 바인딩으로 사용할 수 있음 /// ` 백틱기호 중간에 문자 사이에 변수 넣기 es6분법 -->
 
     <div class="post-content">
-      <p>{{ 게시물.likes }} Likes</p>
+      <!-- <p>{{ 게시물.likes }} Likes</p> -->
+      <p><span>{{ $store.state.likes }}</span> Likes : 사진클릭하면 좋아요+1</p>
       <p><strong>{{ 게시물.name }}</strong> {{ 게시물.content }}</p> 
       <p class="date">{{ 게시물.date }}</p>
+      <p>필터 : {{게시물.filter}}</p>
     </div>
   </div>
 </template>
@@ -59,6 +61,10 @@ export default {
   padding-left: 15px;
   padding-right: 15px;
   font-size: 14px;
+}
+.post-content span {
+  color:blueviolet;
+  font-weight:bold;
 }
 .date {
   font-size: 11px;

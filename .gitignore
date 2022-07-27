@@ -21,3 +21,25 @@ pnpm-debug.log*
 *.njsproj
 *.sln
 *.sw?
+
+
+router.output.json
+src/plugins/fb-event-bus-t.js
+
+# Ignore PSD
+*.psd
+
+# Ignore product_detail images files
+**/product_detail/pulmuoneshop/images/
+**/product_detail/orga/images/
+
+# Ignore event images files
+**/event/pulmuoneshop/**/img/
+**/event/orga/**/img/
+
+# Ignore event test files
+**/event/pulmuoneshop/static/test/
+**/test/
+
+# Ignore shop_pulmuone images files
+**/shop_pulmuone/planshop/**/img/
